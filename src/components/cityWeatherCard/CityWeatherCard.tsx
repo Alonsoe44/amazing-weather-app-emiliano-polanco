@@ -2,7 +2,11 @@ import { Link } from "react-router-dom";
 import WeekDayMenu from "../weekDayMenu/WeekDayMenu";
 import { FiWind, FiDroplet } from "react-icons/fi";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { useContext } from "react";
+import { CityContext } from "../../App";
+
 const CityWeatherCard = () => {
+  const { city } = useContext(CityContext);
   return (
     <section className="w-11/12 min-h-full border shadow rounded-md p-3 flex flex-col items-center mt-6">
       <WeekDayMenu />
@@ -11,7 +15,7 @@ const CityWeatherCard = () => {
         <p className="text-7xl font-bold">38c</p>
         <strong className="text-4xl font-medium text-accent">Sunny</strong>
         <h1 className="text-secondaryText text-3xl font-semibold my-5">
-          Valencia
+          {city.name}
           <div className="text-xl -translate-y-[8px]">Spain</div>
         </h1>
         <div className="h-[1px] w-5/6 bg-thirdText"></div>
