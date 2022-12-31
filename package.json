@@ -19,8 +19,23 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "eject": "react-scripts eject",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test-watch": "react-scripts test --watchAll",
+    "test-coverage": "react-scripts test --collect-coverage --watchAll"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "src/**/*.ts",
+      "!src/**/*.test.tsx",
+      "!src/**/*.test.ts",
+      "!src/index.tsx",
+      "!src/reportWebVitals.ts",
+      "!src/setupTests.ts",
+      "!src/react-app-env.d.ts",
+      "!src/App.tsx"
+    ]
   },
   "eslintConfig": {
     "extends": [
