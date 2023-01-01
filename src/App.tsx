@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import { createContext, useState } from "react";
 import CityForecast from "./interfaces/CityForecast";
 
-const defaultCity: CityForecast = {
+export const defaultCity: CityForecast = {
   name: "London",
   country: "GB",
   latitude: 51.5085,
