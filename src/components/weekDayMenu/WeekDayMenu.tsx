@@ -1,13 +1,18 @@
 import React from "react";
 
-const WeekDayMenu = () => {
+interface WeekDayMenuProps {
+  weekDay: string;
+  hour: string;
+}
+
+const WeekDayMenu = ({ weekDay, hour }: WeekDayMenuProps) => {
   return (
     <menu className="flex w-full justify-between text-thirdText">
       <li>Sunday</li>
       <li>
         <div className="flex flex-col text-center font-medium text-secondaryText">
-          Monday
-          <time className="-translate-y-[6px] text-sm">11:00</time>
+          {weekDay}
+          <time className="-translate-y-[6px] text-sm">{hour}</time>
         </div>
       </li>
       <li>Tuesday</li>

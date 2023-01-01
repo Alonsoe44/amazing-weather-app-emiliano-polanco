@@ -2,10 +2,31 @@ import { Route, Routes } from "react-router";
 import City from "./pages/City";
 import Home from "./pages/Home";
 import { createContext, useState } from "react";
+import CityForecast from "./interfaces/CityForecast";
 
-const defaultCity = {
-  name: "Vancouver",
-  id: 6173331,
+const defaultCity: CityForecast = {
+  name: "London",
+  country: "GB",
+  latitude: 51.5085,
+  longitude: -0.1257,
+  forecastEvery3HoursCollection: [
+    {
+      date: "2021-08-23T00:00:00+01:00",
+      weekday: "Tuesday",
+      hour: "8:00",
+      mainStats: {
+        humidity: 87,
+        maxTemperature: 15.5,
+        minTemperature: 15.5,
+        temperature: 15.5,
+        weather: "Clouds",
+      },
+      wind: {
+        degrees: 180,
+        speed: 1.03,
+      },
+    },
+  ],
 };
 
 export const CityContext = createContext({
