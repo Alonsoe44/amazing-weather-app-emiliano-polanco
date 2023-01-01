@@ -7,26 +7,34 @@ import { CityContext } from "../../App";
 
 const CityWeatherCard = () => {
   const { city } = useContext(CityContext);
+  const firstForecast = city.forecastEvery3HoursCollection[0];
+  const {
+    mainStats: { temperature, weather, humidity },
+    wind: { speed },
+    hour,
+    weekday,
+  } = firstForecast;
   return (
     <section className="w-11/12 min-h-full border shadow rounded-md p-3 flex flex-col items-center mt-6">
-      <WeekDayMenu />
+      <WeekDayMenu hour={hour} weekDay={weekday} />
       <div className="w-60 h-60 my-10 bg-accent rounded-full"></div>
       <div className="pl-12 w-full ">
-        <p className="text-7xl font-bold">38c</p>
-        <strong className="text-4xl font-medium text-accent">Sunny</strong>
+        <p className="text-7xl font-bold">{temperature}°</p>
+        <strong className="text-4xl font-medium text-accent">{weather}</strong>
         <h1 className="text-secondaryText text-3xl font-semibold my-5">
           {city.name}
-          <div className="text-xl -translate-y-[8px]">Spain</div>
+          <div className="text-xl -translate-y-[8px]">{city.country}</div>
         </h1>
         <div className="h-[1px] w-5/6 bg-thirdText"></div>
         <ul className="flex flex-col text-secondaryText my-5">
           <li className="mb-2">
             <FiDroplet className="inline" />
-            <span className="mx-2 font-bold text-black">37% </span>Humidity
+            <span className="mx-2 font-bold text-black">{humidity}% </span>
+            Humidity
           </li>
           <li>
             <FiWind className="inline" />
-            <span className="mx-2 font-bold text-black">3km/h </span> Wind
+            <span className="mx-2 font-bold text-black">{speed}km/h </span> Wind
           </li>
         </ul>
       </div>
