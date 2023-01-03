@@ -1,8 +1,8 @@
 import React from "react";
 
 interface WeekDayMenuProps {
-  weekDay: string;
-  hour: string;
+  weekDay: number;
+  hour: number;
 }
 
 const WeekDayMenu = ({ weekDay, hour }: WeekDayMenuProps) => {

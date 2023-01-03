@@ -1,7 +1,7 @@
 export default interface Forecast {
   date: string;
-  weekday: string;
-  hour: string;
+  weekday: number;
+  hour: number;
   mainStats: {
     minTemperature: number;
     maxTemperature: number;

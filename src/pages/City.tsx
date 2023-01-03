@@ -5,6 +5,7 @@ import CityDetailsCard from "../components/cityDetailsCard/CityDetailsCard";
 import useFetch from "../hooks/useFetch";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Grid } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 const City = () => {
   const { city: cityNameParams } = useParams();
@@ -14,7 +15,6 @@ const City = () => {
     cityNameParams as string,
     process.env.REACT_APP_API_KEY as string
   );
-
   const { city } = useContext(CityContext);
   return (
     <div className="flex justify-center flex-col items-center">
@@ -24,9 +24,9 @@ const City = () => {
         </div>
       ) : (
         <>
-          <div className="flex items-center w-full">
+          <Link to={`/${cityNameParams}`} className="flex items-center w-full">
             <MdKeyboardArrowLeft className="inline" /> <h1>{city.name}</h1>
-          </div>
+          </Link>
           <CityDetailsCard city={city} />
         </>
       )}

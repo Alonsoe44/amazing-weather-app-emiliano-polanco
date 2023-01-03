@@ -12,8 +12,8 @@ export const defaultCity: CityForecast = {
   forecastEvery3HoursCollection: [
     {
       date: "2021-08-23T00:00:00+01:00",
-      weekday: "Tuesday",
-      hour: "8:00",
+      weekday: 2,
+      hour: 3,
       mainStats: {
         humidity: 87,
         maxTemperature: 15.5,
@@ -40,8 +40,8 @@ function App() {
     <CityContext.Provider value={{ city, setCity }}>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:city" element={<City />} />
+          <Route path="/:city" element={<Home />} />
+          <Route path="/details/:city" element={<City />} />
         </Routes>
       </div>
     </CityContext.Provider>
