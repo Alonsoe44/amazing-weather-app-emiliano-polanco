@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import CityForecast from "../interfaces/CityForecast";
 import { CityContext } from "../App";
-import cityDataOrganizer from "../utils/helpers";
+import { cityDataOrganizer } from "../utils/helpers";
 
 const useFetch = (
   url: string,

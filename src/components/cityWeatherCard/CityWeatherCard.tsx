@@ -3,21 +3,32 @@ import WeekDayMenu from "../weekDayMenu/WeekDayMenu";
 import { FiWind, FiDroplet } from "react-icons/fi";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import CityForecast from "../../interfaces/CityForecast";
+import { useState } from "react";
+import Forecast from "../../interfaces/Forecast";
 
 interface CityWeatherCardProps {
   city: CityForecast;
 }
 const CityWeatherCard = ({ city }: CityWeatherCardProps) => {
-  const firstForecast = city.forecastEvery3HoursCollection[0];
+  const [selectedDay, setSelectedDay] = useState<number>(
+    city.forecastEvery3HoursCollection[0].weekday
+  );
+  const selectedForecast: Forecast = city.forecastEvery3HoursCollection.find(
+    (forecast) => {
+      return forecast.weekday === selectedDay;
+    }
+  ) as Forecast;
   const {
     mainStats: { temperature, weather, humidity },
     wind: { speed },
-    hour,
-    weekday,
-  } = firstForecast;
+  } = selectedForecast;
   return (
-    <section className="w-11/12 min-h-full border shadow rounded-md p-3 flex flex-col items-center mt-6">
-      <WeekDayMenu hour={hour} weekDay={weekday} />
+    <section className="w-11/12 min-h-full border shadow rounded-md p-3 flex flex-col items-center mt-6 mb-4">
+      <WeekDayMenu
+        today={city.forecastEvery3HoursCollection[0].weekday}
+        selectedDay={selectedDay}
+        setSelectedDay={setSelectedDay}
+      />
       <div className="w-60 h-60 my-10 bg-accent rounded-full"></div>
       <div className="pl-12 w-full ">
         <p className="text-7xl font-bold">{temperature.toFixed(1)}°</p>

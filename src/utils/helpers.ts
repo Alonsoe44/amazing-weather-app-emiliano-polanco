@@ -25,4 +25,77 @@ const cityDataOrganizer = (messyObject): CityForecast => ({
   }),
 });
 
-export default cityDataOrganizer;
+const numericToStringWeekDay = (numericWeekDay: number) => {
+  switch (numericWeekDay) {
+    case 0:
+      return "MO";
+    case 1:
+      return "TU";
+    case 2:
+      return "WE";
+    case 3:
+      return "TH";
+    case 4:
+      return "FR";
+    case 5:
+      return "SA";
+    case 6:
+      return "SU";
+    default:
+      return "SU";
+  }
+};
+
+const numberToWeekDayFull = (number: number) => {
+  switch (number) {
+    case 0:
+      return "Sunday";
+    case 1:
+      return "Monday";
+    case 2:
+      return "Tuesday";
+    case 3:
+      return "Wednesday";
+    case 4:
+      return "Thursday";
+    case 5:
+      return "Friday";
+    case 6:
+      return "Saturday";
+    default:
+      return "Invalid day";
+  }
+};
+
+const findMaxNextDay = (today: number) => {
+  return today + 4 >= 7 ? today - 6 + 4 : today + 4;
+};
+
+const stringToNumericWeekDay = (stringWeekDay: string) => {
+  switch (stringWeekDay) {
+    case "MO":
+      return 0;
+    case "TU":
+      return 1;
+    case "WE":
+      return 2;
+    case "TH":
+      return 3;
+    case "FR":
+      return 4;
+    case "SA":
+      return 5;
+    case "SU":
+      return 6;
+    default:
+      return 6;
+  }
+};
+
+export {
+  cityDataOrganizer,
+  numericToStringWeekDay,
+  stringToNumericWeekDay,
+  numberToWeekDayFull,
+  findMaxNextDay,
+};
