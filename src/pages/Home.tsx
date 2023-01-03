@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router";
 import { CityContext } from "../App";
 import CitySelector from "../components/citySelector/CitySelector";
@@ -15,12 +15,20 @@ const Home = () => {
     process.env.REACT_APP_API_KEY as string
   );
   const { city } = useContext(CityContext);
-  return loading ? (
-    <Grid color="#5640A8"></Grid>
-  ) : (
-    <div className="flex flex-col items-center min-h-screen">
-      <CitySelector />
-      <CityWeatherCard city={city} />
+  return (
+    <div
+      className={`flex flex-col items-center min-h-screen ${
+        loading && " justify-center"
+      }`}
+    >
+      {loading ? (
+        <Grid color="#5640A8"></Grid>
+      ) : (
+        <>
+          <CitySelector />
+          <CityWeatherCard city={city} />
+        </>
+      )}
     </div>
   );
 };
