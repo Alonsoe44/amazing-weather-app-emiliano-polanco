@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import WeekDayMenu from "../weekDayMenu/WeekDayMenu";
 import { FiWind, FiDroplet } from "react-icons/fi";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { useContext } from "react";
-import { CityContext } from "../../App";
+import CityForecast from "../../interfaces/CityForecast";
 
-const CityWeatherCard = () => {
-  const { city } = useContext(CityContext);
+interface CityWeatherCardProps {
+  city: CityForecast;
+}
+const CityWeatherCard = ({ city }: CityWeatherCardProps) => {
   const firstForecast = city.forecastEvery3HoursCollection[0];
   const {
     mainStats: { temperature, weather, humidity },
@@ -19,7 +20,7 @@ const CityWeatherCard = () => {
       <WeekDayMenu hour={hour} weekDay={weekday} />
       <div className="w-60 h-60 my-10 bg-accent rounded-full"></div>
       <div className="pl-12 w-full ">
-        <p className="text-7xl font-bold">{temperature}°</p>
+        <p className="text-7xl font-bold">{temperature.toFixed(1)}°</p>
         <strong className="text-4xl font-medium text-accent">{weather}</strong>
         <h1 className="text-secondaryText text-3xl font-semibold my-5">
           {city.name}
@@ -39,7 +40,7 @@ const CityWeatherCard = () => {
         </ul>
       </div>
       <Link
-        to={"/valencia"}
+        to={`/details/${city.name}`}
         className="w-[calc(100%+24px)] flex justify-center text-white bg-accent h-16 translate-y-3"
       >
         <div className="bg-accent h-full flex items-center font-medium ">

@@ -6,6 +6,7 @@ module.exports = {
       white: "#ffffff",
       black: "#000000",
       accent: "#5640A8",
+      weakAccent: "#EAE4FF",
       secondaryText: "#565656",
       thirdText: "#5F5F5F",
     },

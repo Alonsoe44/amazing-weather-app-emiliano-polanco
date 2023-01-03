@@ -25,14 +25,14 @@ const WeekDayDetailsMenu = ({
 }: WeekDayDetailsMenuProps) => {
   return (
     <menu className="flex justify-center w-full">
-      {weekDays.slice(today - 1, today + 4).map((day) => (
+      {weekDays.slice(today, today + 5).map((day) => (
         <li
           key={day}
           className={`${
             selectedDay === day
               ? "bg-accent/10 font-bold text-accent"
               : "bg-white"
-          } px-2 rounded-lg mx-2 text-secondaryText`}
+          } px-2 rounded-lg text-secondaryText h-8 w-14 flex items-center justify-center`}
         >
           <button
             onClick={() => {
