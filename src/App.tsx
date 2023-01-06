@@ -40,6 +40,7 @@ function App() {
     <CityContext.Provider value={{ city, setCity }}>
       <div className="App">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/:city" element={<Home />} />
           <Route path="/details/:city" element={<City />} />
         </Routes>

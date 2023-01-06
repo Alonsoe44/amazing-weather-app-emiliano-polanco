@@ -14,7 +14,11 @@ const WeekDayMenu = ({
   return (
     <menu className="flex w-full justify-center text-thirdText">
       <li className={`${selectedDay === today && "invisible"} w-16`}>
-        <button onClick={() => setSelectedDay(selectedDay - 1)}>
+        <button
+          onClick={() =>
+            setSelectedDay(selectedDay === 0 ? 6 : selectedDay - 1)
+          }
+        >
           {numberToWeekDayFull(selectedDay - 1)}
         </button>
       </li>
@@ -28,7 +32,11 @@ const WeekDayMenu = ({
           selectedDay === findMaxNextDay(today) && "invisible h-0"
         }`}
       >
-        <button onClick={() => setSelectedDay(selectedDay + 1)}>
+        <button
+          onClick={() =>
+            setSelectedDay(selectedDay === 6 ? 0 : selectedDay + 1)
+          }
+        >
           {numberToWeekDayFull(selectedDay + 1)}
         </button>
       </li>

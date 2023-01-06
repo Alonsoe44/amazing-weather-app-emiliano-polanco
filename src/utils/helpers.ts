@@ -48,6 +48,8 @@ const numericToStringWeekDay = (numericWeekDay: number) => {
 
 const numberToWeekDayFull = (number: number) => {
   switch (number) {
+    case -1:
+      return "Saturday";
     case 0:
       return "Sunday";
     case 1:
@@ -62,6 +64,8 @@ const numberToWeekDayFull = (number: number) => {
       return "Friday";
     case 6:
       return "Saturday";
+    case 7:
+      return "Sunday";
     default:
       return "Invalid day";
   }
