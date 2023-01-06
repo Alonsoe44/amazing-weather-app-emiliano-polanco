@@ -1,19 +1,12 @@
 import { useContext } from "react";
-import { useParams } from "react-router";
 import { CityContext } from "../App";
 import CitySelector from "../components/citySelector/CitySelector";
 import CityWeatherCard from "../components/cityWeatherCard/CityWeatherCard";
-import useFetch from "../hooks/useFetch";
 import { Grid } from "react-loader-spinner";
+import useFetch from "../hooks/useFetch";
 
 const Home = () => {
-  const { city: cityNameParams } = useParams();
-  const { loading } = useFetch(
-    process.env.REACT_APP_URL as string,
-    process.env.REACT_APP_GEOCODING_URL as string,
-    cityNameParams as string,
-    process.env.REACT_APP_API_KEY as string
-  );
+  const { loading } = useFetch();
   const { city } = useContext(CityContext);
   return (
     <div

@@ -23,7 +23,7 @@ const CityWeatherCard = ({ city }: CityWeatherCardProps) => {
     wind: { speed },
   } = selectedForecast;
   return (
-    <section className="w-11/12 min-h-full border shadow rounded-md p-3 flex flex-col items-center mt-6 mb-4">
+    <section className="w-11/12 min-h-full border shadow rounded-md p-3 flex flex-col items-center mt-3 mb-4">
       <WeekDayMenu
         today={city.forecastEvery3HoursCollection[0].weekday}
         selectedDay={selectedDay}
