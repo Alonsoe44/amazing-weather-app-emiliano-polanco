@@ -1,3 +1,5 @@
+import { stringToNumericWeekDay } from "../../utils/helpers";
+
 const weekDays = [
   "MO",
   "TU",
@@ -14,8 +16,8 @@ const weekDays = [
 
 interface WeekDayDetailsMenuProps {
   today: number;
-  selectedDay: string;
-  setSelectedDay: (day: string) => void;
+  selectedDay: number;
+  setSelectedDay: (day: number) => void;
 }
 
 const WeekDayDetailsMenu = ({
@@ -29,14 +31,14 @@ const WeekDayDetailsMenu = ({
         <li
           key={day}
           className={`${
-            selectedDay === day
+            selectedDay === stringToNumericWeekDay(day)
               ? "bg-accent/10 font-bold text-accent"
               : "bg-white"
           } px-2 rounded-lg text-secondaryText h-8 w-14 flex items-center justify-center`}
         >
           <button
             onClick={() => {
-              setSelectedDay(day);
+              setSelectedDay(stringToNumericWeekDay(day));
             }}
           >
             {day}

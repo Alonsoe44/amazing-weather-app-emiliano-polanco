@@ -24,8 +24,12 @@ const City = () => {
         </div>
       ) : (
         <>
-          <Link to={`/${cityNameParams}`} className="flex items-center w-full">
-            <MdKeyboardArrowLeft className="inline" /> <h1>{city.name}</h1>
+          <Link
+            to={`/${cityNameParams}`}
+            className="flex items-center w-full pl-2 my-1"
+          >
+            <MdKeyboardArrowLeft className="inline" />
+            <h1 className="text-xl text-secondaryText">{city.name}</h1>
           </Link>
           <CityDetailsCard city={city} />
         </>
