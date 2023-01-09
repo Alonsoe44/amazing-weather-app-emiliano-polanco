@@ -24,7 +24,7 @@ const WeekDayMenu = ({
       </li>
       <li className="w-32 mx-5">
         <div className="flex flex-col text-center font-semibold text-accent">
-          {numberToWeekDayFull(selectedDay)}
+          <h2>{numberToWeekDayFull(selectedDay)}</h2>
         </div>
       </li>
       <li
