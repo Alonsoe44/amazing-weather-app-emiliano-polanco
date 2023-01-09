@@ -25,27 +25,6 @@ const cityDataOrganizer = (messyObject): CityForecast => ({
   }),
 });
 
-const numericToStringWeekDay = (numericWeekDay: number) => {
-  switch (numericWeekDay) {
-    case 0:
-      return "MO";
-    case 1:
-      return "TU";
-    case 2:
-      return "WE";
-    case 3:
-      return "TH";
-    case 4:
-      return "FR";
-    case 5:
-      return "SA";
-    case 6:
-      return "SU";
-    default:
-      return "SU";
-  }
-};
-
 const numberToWeekDayFull = (number: number) => {
   switch (number) {
     case -1:
@@ -77,28 +56,27 @@ const findMaxNextDay = (today: number) => {
 
 const stringToNumericWeekDay = (stringWeekDay: string) => {
   switch (stringWeekDay) {
-    case "MO":
-      return 0;
-    case "TU":
-      return 1;
-    case "WE":
-      return 2;
-    case "TH":
-      return 3;
-    case "FR":
-      return 4;
-    case "SA":
-      return 5;
     case "SU":
+      return 0;
+    case "MO":
+      return 1;
+    case "TU":
+      return 2;
+    case "WE":
+      return 3;
+    case "TH":
+      return 4;
+    case "FR":
+      return 5;
+    case "SA":
       return 6;
     default:
-      return 6;
+      return -1;
   }
 };
 
 export {
   cityDataOrganizer,
-  numericToStringWeekDay,
   stringToNumericWeekDay,
   numberToWeekDayFull,
   findMaxNextDay,
