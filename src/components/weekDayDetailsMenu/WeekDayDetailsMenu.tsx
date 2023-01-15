@@ -25,8 +25,6 @@ const WeekDayDetailsMenu = ({
   selectedDay,
   setSelectedDay,
 }: WeekDayDetailsMenuProps) => {
-  console.log(today);
-  console.log(selectedDay, "selectedDay");
   return (
     <menu className="flex justify-center w-full">
       {weekDays.slice(today, today + 5).map((day) => (

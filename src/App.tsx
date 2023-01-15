@@ -3,6 +3,7 @@ import City from "./pages/City";
 import Home from "./pages/Home";
 import { createContext, useState } from "react";
 import CityForecast from "./interfaces/CityForecast";
+import { Canvas } from "@react-three/fiber";
 
 export const defaultCity: CityForecast = {
   name: "London",
