@@ -2,13 +2,17 @@
 
 This is the weather app number 98798743243247 on github, but hold on before you go I have some interesting twists in the implementation and stack, so stick around and let me explain
 
-https://user-images.githubusercontent.com/78975724/211225907-49f859de-8d05-4c13-a745-2ff7b63f1300.mp4
+https://user-images.githubusercontent.com/78975724/212718455-07f48b85-a7aa-43f2-8679-7647f7b3a6e8.mov
 
 
 ## What problems does this app solves ?
 
 Weather applications usually have a lot of charts and porr ui-ux design that make the average person confused,
 sometimes people just wanna see the time for the next days,
+
+
+
+
 
 - No complex menus, just go to the webpage and the app will ask for your location to give you your forecast for the next days
 - To pick a city just open the menu, if it's not there you can write the name of any city in the domain path
