@@ -2,17 +2,14 @@
 
 This is the weather app number 98798743243247 on github, but hold on before you go I have some interesting twists in the implementation and stack, so stick around and let me explain
 
-https://user-images.githubusercontent.com/78975724/212718455-07f48b85-a7aa-43f2-8679-7647f7b3a6e8.mov
+To render the 3d background I designed the diorama on blender, and baked the textures to get a better performance wihout losing those beautiful lightnings effect
 
+https://user-images.githubusercontent.com/78975724/212718455-07f48b85-a7aa-43f2-8679-7647f7b3a6e8.mov
 
 ## What problems does this app solves ?
 
 Weather applications usually have a lot of charts and porr ui-ux design that make the average person confused,
 sometimes people just wanna see the time for the next days,
-
-
-
-
 
 - No complex menus, just go to the webpage and the app will ask for your location to give you your forecast for the next days
 - To pick a city just open the menu, if it's not there you can write the name of any city in the domain path
